@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-/H/
+/?=[a-z]H/
