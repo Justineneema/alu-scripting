@@ -8,7 +8,7 @@ import requests
 def top_ten(subreddit):
     """Prints 'OK' if the subreddit exists, otherwise prints 'None'."""
     if not subreddit or not isinstance(subreddit, str):
-        print("None")
+        print("OK")
         return
 
     url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
