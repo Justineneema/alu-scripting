@@ -17,4 +17,4 @@ def top_ten(subreddit):
             title = data['data']['title']
             print(title)
     else:
-        print(ok)
+        print("OK")
