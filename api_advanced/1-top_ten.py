@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-""" 1-top_ten.py """
+"""
+Fetching the hot top 10 post in a given subreddit
+"""
 import requests
 
 
 def top_ten(subreddit):
-    """ prints the titles of the first 10 hot posts listed in a subreddit """
     url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code != 200:
-        print(None)
-        return
-    posts = response.json()['data']['children']
-    for post in posts:
-        print(post['data']['title'])
+    headers = {'User-Agent': 'Fab'}
+
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        value = response.json()
+        datas = value['data']['children']
+        for data in datas:
+            title = data['data']['title']
+            print(title)
+    else:
+        print('None')
